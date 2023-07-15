@@ -60,7 +60,7 @@ def main():
         #st.write(f':{color}[Thank you!]')
         new_data = [precipitation, temp_max, temp_min, wind, correct_val]
         df2 = pd.DataFrame([new_data])
-        df2.to_csv("weather_database.csv", header=False, index=False, mode='a')
+        df2.to_csv("https://drive.google.com/file/d/1MAMKiJYdeZaoKtA5q0lZJoGt5KOf_-mf/view?usp=drive_link", header=False, index=False, mode='a')
 
         st.button('Start Over', on_click=set_state, args=[0])
         
