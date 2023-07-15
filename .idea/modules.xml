@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/PycharmProjects/Machine Learning/.idea/Machine Learning.iml" filepath="$USER_HOME$/PycharmProjects/Machine Learning/.idea/Machine Learning.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/Sk_Kaggle/.idea/Machine Learning 2.iml" filepath="$USER_HOME$/PycharmProjects/Sk_Kaggle/.idea/Machine Learning 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Practice.iml" filepath="$PROJECT_DIR$/.idea/Practice.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/pythonProject/.idea/pythonProject.iml" filepath="$USER_HOME$/PycharmProjects/pythonProject/.idea/pythonProject.iml" />
+    </modules>
+  </component>
+</project>
