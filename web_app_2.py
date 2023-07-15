@@ -10,9 +10,9 @@ import pickle
 import streamlit as st
 import pandas as pd
 
-loaded_model = pickle.load(open(r"C:\Users\pc\Desktop\Practice\model_pack.json", 'rb'))
+loaded_model = pickle.load(open("model_pack.json", 'rb'))
 
-df = pd.read_csv(r"C:\Users\pc\Desktop\Practice\weather_forecast.csv")
+df = pd.read_csv("weather_forecast.csv")
 '''
 # Welcome!!!
 '''
@@ -60,8 +60,9 @@ def main():
         #st.write(f':{color}[Thank you!]')
         new_data = [precipitation, temp_max, temp_min, wind, correct_val]
         df2 = pd.DataFrame([new_data])
-        df2.to_csv(r"C:\Users\pc\Desktop\Practice\weather_database.csv", header=False, index=False, mode='a')
+        df2.to_csv("weather_database.csv", header=False, index=False, mode='a')
 
         st.button('Start Over', on_click=set_state, args=[0])
+        
 if __name__ == '__main__':
     main()
