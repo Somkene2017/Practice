@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 import pandas as pd
 
-loaded_model = pickle.load(open('model_pack.json', 'rb'))
+#loaded_model = pickle.load(open('model_pack.json', 'rb'))
 
 df = pd.read_csv("weather_forecast.csv")
 '''
