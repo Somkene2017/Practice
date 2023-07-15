@@ -65,7 +65,7 @@ def main():
         sheet_id = st.secrets.sheet_id
         worksheet_name = st.secrets.worksheet_name
         # Create a Google Sheet client
-        gc = gspread.service_account(st.secrets.cred)
+        gc = gspread.service_account(st.secrets.cred.content)
 
         # Open the Google Sheet
         sh = gc.open_by_key(sheet_id)
