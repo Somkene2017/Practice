@@ -9,6 +9,7 @@ import numpy as np
 import pickle
 import streamlit as st
 import pandas as pd
+import gspread
 
 loaded_model = pickle.load(open("model_pack.json", 'rb'))
 
@@ -60,7 +61,20 @@ def main():
         #st.write(f':{color}[Thank you!]')
         new_data = [precipitation, temp_max, temp_min, wind, correct_val]
         df2 = pd.DataFrame([new_data])
-        df2.to_csv('https://docs.google.com/spreadsheets/d/1_ncxr889kkMLo86QuKFbH736hYSpjNgO9JAfYGv6f_Y/edit?usp=sharing', header=False, index=False, mode='a')
+        #df2.to_csv('https://docs.google.com/spreadsheets/d/1_ncxr889kkMLo86QuKFbH736hYSpjNgO9JAfYGv6f_Y/edit?usp=sharing', header=False, index=False, mode='a')
+        sheet_id = st.secrets.sheet_id
+        worksheet_name = st.secrets.worksheet_name
+        # Create a Google Sheet client
+        gc = gspread.service_account(st.secrets.cred)
+
+        # Open the Google Sheet
+        sh = gc.open_by_key(sheet_id)
+
+        # Get the worksheet
+        ws = sh.worksheet(worksheet_name)
+
+        # Append the DataFrame to the worksheet
+        ws.append_rows(df2.values.tolist(), value_input_option='USER_ENTERED')
 
         st.button('Start Over', on_click=set_state, args=[0])
         
