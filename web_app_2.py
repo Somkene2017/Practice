@@ -7,6 +7,7 @@ Created on Wed Jul 12 21:54:21 2023
 
 import numpy as np
 import pickle
+import json
 import streamlit as st
 import pandas as pd
 import gspread
@@ -65,8 +66,9 @@ def main():
         sheet_id = st.secrets.sheet_id
         worksheet_name = st.secrets.worksheet_name
         # Create a Google Sheet client
-        #dict = st.secrets.cred
-        gc = gspread.service_account('somkenes-project.json')
+        credentials_str = st.secrets.cred
+        credentials_dict = json.loads(credentials_str)
+        gc = gspread.service_account_from_dict(credentials_dict)
         # Open the Google Sheet
         sh = gc.open_by_key(sheet_id)
 
