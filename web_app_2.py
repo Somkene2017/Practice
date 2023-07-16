@@ -67,8 +67,8 @@ def main():
         worksheet_name = st.secrets.worksheet_name
         # Create a Google Sheet client
         dict = st.secrets.cred
-        gc = service_account.Credentials.from_service_account_info(dict)
-
+        credentials = service_account.Credentials.from_service_account_info(dict)
+        gc = gspread.authorize(credentials)
         # Open the Google Sheet
         sh = gc.open_by_key(sheet_id)
 
