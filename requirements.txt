@@ -1,5 +1,4 @@
 gspread==5.7.1
 numpy==1.23.5
-oauth2client==4.1.3
 pandas==1.5.3
 streamlit==1.24.1
