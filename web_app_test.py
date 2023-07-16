@@ -1,6 +1,7 @@
 import numpy as np
 import pickle
 import pandas as pd
+import sklearn
 
 loaded_model = pickle.load(open('model_pack.json', 'rb'))
 input_data = (0.0, 6.1, -1.1, 5.1)
