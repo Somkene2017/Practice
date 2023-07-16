@@ -1,5 +1,5 @@
 # Weather_prediction_app
-URL = practice-sk.streamlit.app
+web_app URL = https://practice-sk.streamlit.app/
 
 This web app simply takes user inputs and predicts whether it will rain or not.
 
