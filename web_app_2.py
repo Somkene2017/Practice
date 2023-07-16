@@ -62,11 +62,11 @@ def main():
         #st.write(f':{color}[Thank you!]')
         new_data = [precipitation, temp_max, temp_min, wind, correct_val]
         df2 = pd.DataFrame([new_data])
-        #df2.to_csv('https://docs.google.com/spreadsheets/d/1_ncxr889kkMLo86QuKFbH736hYSpjNgO9JAfYGv6f_Y/edit?usp=sharing', header=False, index=False, mode='a')
+
         sheet_id = st.secrets.sheet_id
         worksheet_name = st.secrets.worksheet_name
         # Create a Google Sheet client
-        credentials_str = st.secrets.cred
+        credentials_str = st.secrets["cred"]
         credentials_dict = json.loads(credentials_str)
         gc = gspread.service_account_from_dict(credentials_dict)
         # Open the Google Sheet
