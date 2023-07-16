@@ -76,6 +76,7 @@ def main():
 
         # Append the DataFrame to the worksheet
         ws.append_rows(df2.values.tolist(), value_input_option='USER_ENTERED')
+        "Thank you for your feedback. Click on 'Start Over' for another prediction"
 
         st.button('Start Over', on_click=set_state, args=[0])
         
