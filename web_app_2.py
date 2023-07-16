@@ -10,6 +10,7 @@ import pickle
 import streamlit as st
 import pandas as pd
 import gspread
+from google.oauth2 import service_account
 
 loaded_model = pickle.load(open("model_pack.json", 'rb'))
 
@@ -66,7 +67,7 @@ def main():
         worksheet_name = st.secrets.worksheet_name
         # Create a Google Sheet client
         dict = st.secrets.cred
-        gc = gspread.create_service_account_from_dict(dict)
+        gc = service_account.Credentials.from_service_account_info(dict)
 
         # Open the Google Sheet
         sh = gc.open_by_key(sheet_id)
