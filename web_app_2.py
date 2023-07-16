@@ -33,7 +33,7 @@ def main():
     #OR
     #with left_column:
         #left_column.radio('Outcome', np.unique(df.weather))
-    
+    st.text_input("please enter your name: ", key='name')
     precipitation = st.slider('What is the precipitation level:', 0.0, max(df['precipitation']))
     temp_max = st.slider('What is the maximum temperature?: ', 0.0, max(df.temp_max))
     temp_min = st.slider('What is the minimum temperature?; ', 0.0, max(df.temp_min))
@@ -76,7 +76,7 @@ def main():
 
         # Append the DataFrame to the worksheet
         ws.append_rows(df2.values.tolist(), value_input_option='USER_ENTERED')
-        "Thank you for your feedback. Click on 'Start Over' for another prediction"
+        f"Thank you {st.session_state.name} for your feedback. Click on 'Start Over' for another prediction"
 
         st.button('Start Over', on_click=set_state, args=[0])
         
