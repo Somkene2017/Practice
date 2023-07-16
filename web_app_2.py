@@ -10,7 +10,7 @@ import pickle
 import streamlit as st
 import pandas as pd
 import gspread
-from google.oauth2.gdch_credentials import ServiceAccountCredentials
+from oauth2client.service_account import ServiceAccountCredentials
 
 loaded_model = pickle.load(open("model_pack.json", 'rb'))
 

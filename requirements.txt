@@ -2,3 +2,4 @@ gspread==5.7.1
 numpy==1.23.5
 pandas==1.5.3
 streamlit==1.24.1
+google-api-python-client==2.93.0
