@@ -12,7 +12,7 @@ import json
 import streamlit as st
 import pandas as pd
 import gspread
-import datetime
+from datetime import datetime
 import pytz
 
 loaded_model = pickle.load(open("model_pack.json", 'rb'))
@@ -58,14 +58,14 @@ def main():
         st.success(weather_result)
         #st.write(f'Hello {name}!')
         time_var = ''
-        time_var = datetime.timezone()
-        time_var = time_var.strftime('%d/%m/%Y %H:%M:%S')
+        time_var = datetime.now(pytz.timezone('WAT'))
+        time_value = time_var.strftime('%d/%m/%Y %H:%M:%S')
         correct_val = st.selectbox('What is the right value? ', [None, 'rain', 'sun'], on_change=set_state, args=[2])
         if correct_val is None:
             set_state(1)
     if (st.session_state.stage >= 2):
         #st.write(f':{color}[Thank you!]')
-        new_data = [precipitation, temp_max, temp_min, wind, correct_val, time_var, st.session_state.name]
+        new_data = [precipitation, temp_max, temp_min, wind, correct_val, time_value, st.session_state.name]
         df2 = pd.DataFrame([new_data])
 
         sheet_id = st.secrets.sheet_id
