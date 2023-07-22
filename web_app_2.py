@@ -58,7 +58,7 @@ def main():
         st.success(weather_result)
         #st.write(f'Hello {name}!')
         time_var = ''
-        time_var = datetime.now(pytz.timezone('WAT'))
+        time_var = datetime.now(pytz.timezone('EST'))
         time_var = time_var.strftime('%d/%m/%Y %H:%M:%S')
         correct_val = st.selectbox('What is the right value? ', [None, 'rain', 'sun'], on_change=set_state, args=[2])
         if correct_val is None:
