@@ -11,7 +11,7 @@ import json
 import streamlit as st
 import pandas as pd
 import gspread
-
+import time
 loaded_model = pickle.load(open("model_pack.json", 'rb'))
 
 df = pd.read_csv("weather_forecast.csv")
@@ -54,13 +54,14 @@ def main():
         weather_result = weather_prediction([precipitation, temp_max, temp_min, wind])
         st.success(weather_result)
         #st.write(f'Hello {name}!')
-       
+        time_var = ''
+        time_var = time.strftime('%d/%m/%Y %H:%M:%S')
         correct_val = st.selectbox('What is the right value? ', [None, 'rain', 'sun'], on_change=set_state, args=[2])
         if correct_val is None:
             set_state(1)
     if (st.session_state.stage >= 2):
         #st.write(f':{color}[Thank you!]')
-        new_data = [precipitation, temp_max, temp_min, wind, correct_val]
+        new_data = [precipitation, temp_max, temp_min, wind, correct_val, time_var, st.session_state.name]
         df2 = pd.DataFrame([new_data])
 
         sheet_id = st.secrets.sheet_id
