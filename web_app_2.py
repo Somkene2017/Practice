@@ -38,8 +38,8 @@ def main():
         #left_column.radio('Outcome', np.unique(df.weather))
     st.text_input("please enter your name: ", key='name')
     precipitation = st.slider('What is the precipitation level:', 0.0, max(df['precipitation']))
-    temp_max = st.slider('What is the maximum temperature?: ', 0.0, max(df.temp_max))
-    temp_min = st.slider('What is the minimum temperature?; ', 0.0, max(df.temp_min))
+    temp_max = st.slider('What is the maximum temperature (degree celcius)?: ', 0.0, max(df.temp_max))
+    temp_min = st.slider('What is the minimum temperature (degree celcius?; ', 0.0, max(df.temp_min))
     wind = st.slider('What is the wind level?: ', 0.0, max(df.wind))
     
     if 'stage' not in st.session_state:
