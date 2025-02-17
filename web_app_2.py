@@ -8,6 +8,7 @@ Created on Wed Jul 12 21:54:21 2023
 
 import numpy as np
 import pickle
+import sklearn
 import json
 import streamlit as st
 import pandas as pd
